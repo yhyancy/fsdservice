@@ -14,4 +14,7 @@
 	<update id="updateValidate">
 		update user_info set confirmed="Y" where user_name=#{userName}
 	</update>
+	<update id="updatePassword">
+		update user_info set password=#{password} where user_name=#{user_name}
+	</update>
 </mapper>

@@ -10,4 +10,5 @@ public interface UserInfoMapper {
     UserInfoDB selectUserByName(String userName);
     int addUser(UserInfoDB userInfoDB);
     int updateValidate(String userName);
+    int updatePassword(UserInfoDB userInfoDB);
 }
