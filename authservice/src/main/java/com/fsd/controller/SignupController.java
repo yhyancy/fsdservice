@@ -38,13 +38,13 @@ public class SignupController {
         //5. 给用户邮箱发link,用于确认激活账号
         String mailSendtoAddress=userInfoDB.getEmail();
         String subject = "Please confirm your code:";
-        String text= feHostname + "/email-confirm"+ "?Uname=" + userInfoDB.getUser_name() + "&code=" + veriCode;
+        String text= feHostname + "/email-confirm"+ "?uname=" + userInfoDB.getUser_name() + "&code=" + veriCode;
         mailMan.sender(mailSendtoAddress,subject,text);
         //6. 返回给前台
         return  new SignupReturn("OK");
     }
 
-    @PostMapping("validate")
+    @GetMapping("validate")
     public SignupReturn validateSignup(@RequestParam(required = true) String uname, @RequestParam(required = true) String code){
         if(uname.length()>10){
             return new SignupReturn("NOT ALLOWED");
