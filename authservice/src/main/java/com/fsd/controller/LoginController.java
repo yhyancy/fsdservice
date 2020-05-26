@@ -1,7 +1,7 @@
 package com.fsd.controller;
 
-import com.fsd.data.entity.LoginEntity;
-import com.fsd.data.entity.LoginReturn;
+import com.fsd.data.entity.Login.LoginEntity;
+import com.fsd.data.entity.Login.LoginReturn;
 import com.fsd.data.entity.UserInfoDB;
 import com.fsd.data.mapper.UserInfoMapper;
 import com.fsd.tools.TokenTool;

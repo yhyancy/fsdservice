@@ -1,7 +1,7 @@
 package com.fsd.controller;
 
-import com.fsd.data.entity.SignupEntity;
-import com.fsd.data.entity.SignupReturn;
+import com.fsd.data.entity.Signup.SignupEntity;
+import com.fsd.data.entity.Signup.SignupReturn;
 import com.fsd.data.entity.UserInfoDB;
 import com.fsd.data.mapper.UserInfoMapper;
 import com.fsd.tools.MailMan;

@@ -1,4 +1,4 @@
-package com.fsd.data.entity;
+package com.fsd.data.entity.Signup;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
