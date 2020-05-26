@@ -6,7 +6,8 @@ import com.fsd.data.entity.UserInfoDB;
 
 public class TokenTool {
     public static String getToken(UserInfoDB userInfoDB){
-        String token= JWT.create().withAudience(userInfoDB.getUser_name())
+       String token="";
+       token= JWT.create().withAudience(userInfoDB.getUser_name())
                 .sign(Algorithm.HMAC256(userInfoDB.getPassword()));
         return token;
     }

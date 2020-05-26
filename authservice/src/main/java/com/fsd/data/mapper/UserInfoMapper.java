@@ -8,4 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserInfoMapper {
     UserInfoDB selectUserByName(String userName);
+    int addUser(UserInfoDB userInfoDB);
+    int updateValidate(String userName);
 }

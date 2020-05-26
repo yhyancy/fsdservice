@@ -14,14 +14,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @CrossOrigin("*") //允许跨域
 public class LoginController {
-private final UserInfoMapper userInfoMapper;
+    private final UserInfoMapper userInfoMapper;
 
-@Autowired
-private LoginController(UserInfoMapper userInfoMapper){
-    this.userInfoMapper=userInfoMapper;
-}
+    @Autowired
+    private LoginController(UserInfoMapper userInfoMapper){
+        this.userInfoMapper=userInfoMapper;
+    }
+
     @PostMapping("/login")
-    public LoginReturn authUnamePwd(@RequestBody(required = true)LoginEntity authUser){
+    public LoginReturn authUnamePwd(@RequestBody(required = true) LoginEntity authUser){
         System.out.println(authUser);
      //1. 校验authUser是否为空
         if(authUser==null){
