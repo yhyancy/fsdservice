@@ -5,6 +5,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>authservice</module>
+        <module>iposervice</module>
+
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
