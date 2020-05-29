@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface IpoMapper {
     List<IpoEntity> listIpo();
+    int addIpo(IpoEntity ipoEntity);
 }

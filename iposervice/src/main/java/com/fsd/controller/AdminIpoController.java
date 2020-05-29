@@ -1,11 +1,9 @@
 package com.fsd.controller;
 
 import com.fsd.data.entity.IpoEntity;
+import com.fsd.data.entity.IpoReturn;
 import com.fsd.data.mapper.IpoMapper;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,5 +19,14 @@ public class AdminIpoController {
     @GetMapping("list")
     private List<IpoEntity> getIpoList(){
         return ipoMapper.listIpo();
+    }
+
+    @PostMapping("add")
+    private IpoReturn addIpo(@RequestBody(required = true) IpoEntity ipoEntity){
+      int status= ipoMapper.addIpo(ipoEntity);
+      if(status == 1){
+          return new IpoReturn("OK");
+      }
+      return new IpoReturn("Failed");
     }
 }
