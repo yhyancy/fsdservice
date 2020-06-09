@@ -40,3 +40,17 @@ spring:
 fsd:
   frontend:
     hostname: http://localhost:4200
+
+#Eureka配置，服务注册到哪里
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    instance-id: springcloud-provider-authservice8081 #修改Euerka上的默认描述信息
+
+#info配置
+info:
+  app.name: yancy-springcloud
+  company.name: fsd.yancystudy.com
+
