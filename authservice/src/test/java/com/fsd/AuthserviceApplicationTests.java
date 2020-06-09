@@ -33,7 +33,8 @@ public class AuthserviceApplicationTests {
     @Test
     @DisplayName("Test Login Controller")
     public void test() throws Exception {
-        
+
+
         LoginEntity user = new LoginEntity();
         user.setUserName("dlyhua");
         user.setPassWord("111111");
