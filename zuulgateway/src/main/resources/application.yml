@@ -29,3 +29,6 @@ zuul:
   routes:
     fsd.serviceId: iposervice
     fsd.path: /fsd/**
+  ignored-services: "*" #隐藏全部的真实项目
+  prefix: /yancy #设置统一的前缀
+#  ignored-services: iposervice #不能使用这个路径访问了
