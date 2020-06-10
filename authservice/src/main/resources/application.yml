@@ -54,9 +54,5 @@ info:
   app.name: yancy-springcloud
   company.name: fsd.yancystudy.com
 
-management:
-  endpoints:
-    jmx:
-      exposure:
-        include: '*'
+
 
