@@ -24,4 +24,8 @@ spring:
     password: 594Caoyizheng!
     driver-class-name: com.mysql.cj.jdbc.Driver
 
-
+#zuul配置
+zuul:
+  routes:
+    fsd.serviceId: iposervice
+    fsd.path: /fsd/**
