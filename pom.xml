@@ -7,6 +7,7 @@
         <module>authservice</module>
         <module>iposervice</module>
         <module>eurekaserver</module>
+        <module>zuulgateway</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
