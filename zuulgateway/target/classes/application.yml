@@ -24,8 +24,26 @@ spring:
     password: 594Caoyizheng!
     driver-class-name: com.mysql.cj.jdbc.Driver
 
+##zuul配置
+#zuul:
+#  routes:
+#    fsd.serviceId: iposervice
+#    fsd.path: /fsd/**
+#  ignored-services: "*" #隐藏全部的真实项目
+#  prefix: /yancy #设置统一的前缀
+#  #ignored-headers:  #默认为空，表示不过滤任何头信息（比如headers里面的jwt token）
+#  #ignored-services: iposervice #不能使用这个路径访问了
+
 #zuul配置
 zuul:
   routes:
-    fsd.serviceId: iposervice
-    fsd.path: /fsd/**
+    ipo:
+      path: /ipo/**
+      serviceId: iposervice
+    auth:
+      path: /auth/**
+      serviceId: authservice
+  ignored-services: "*" #隐藏全部的真实项目
+  prefix: /yancy #设置统一的前缀
+  #ignored-headers:  #默认为空，表示不过滤任何头信息（比如headers里面的jwt token）
+  #ignored-services: iposervice #不能使用这个路径访问了
