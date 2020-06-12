@@ -18,4 +18,12 @@
     <update id="disableCompany" parameterType="com.fsd.data.entity.CompanyEntity">
 		update company set company_status="Inactive" where company_code=#{company_code}
 	</update>
+
+	<update id="updateCompany" parameterType="com.fsd.data.entity.CompanyEntity">
+		update company set company_name=#{company_name},turnover=#{turnover},
+				ceo=#{ceo},board_of_director=#{board_of_director},listed_in_se=#{listed_in_se},sector_name=#{sector_name},
+				brife_write_up=#{brife_write_up},stock_code=#{stock_code},company_status=#{company_status}
+				where company_code=#{company_code}
+	</update>
+
 </mapper>
