@@ -6,6 +6,8 @@ import com.fsd.data.mapper.CompanyMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin("*")
 @RequestMapping("admin/company")
@@ -14,6 +16,11 @@ public class ManagecompanyController {
     @Autowired
     private ManagecompanyController(CompanyMapper companyMapper){
         this.companyMapper=companyMapper;
+    }
+
+    @GetMapping("/list")
+    public List<CompanyEntity> listCompany(){
+       return companyMapper.listCompany();
     }
 
    @PostMapping("/add")

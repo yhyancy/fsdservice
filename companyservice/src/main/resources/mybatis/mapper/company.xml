@@ -11,4 +11,7 @@
 	    values (#{company_code},#{company_name},#{turnover}, #{ceo}, #{board_of_director}, #{listed_in_se},#{sector_name},#{brife_write_up},#{stock_code},#{company_status})
 	</insert>
 
+	<select id="listCompany" resultType="com.fsd.data.entity.CompanyEntity">
+		select * from company
+	</select>
 </mapper>
