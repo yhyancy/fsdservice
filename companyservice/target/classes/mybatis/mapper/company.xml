@@ -5,13 +5,17 @@
 
 <mapper namespace="com.fsd.data.mapper.CompanyMapper">
 
-	<insert id="addCompany" parameterType="com.fsd.data.entity.CompanyEntity" >
+    <insert id="addCompany" parameterType="com.fsd.data.entity.CompanyEntity">
 	    insert into company
 	    (company_code,company_name,turnover, ceo, board_of_director, listed_in_se, sector_name, brife_write_up, stock_code, company_status)
 	    values (#{company_code},#{company_name},#{turnover}, #{ceo}, #{board_of_director}, #{listed_in_se},#{sector_name},#{brife_write_up},#{stock_code},#{company_status})
 	</insert>
 
-	<select id="listCompany" resultType="com.fsd.data.entity.CompanyEntity">
+    <select id="listCompany" resultType="com.fsd.data.entity.CompanyEntity">
 		select * from company
 	</select>
+
+    <update id="disableCompany" parameterType="com.fsd.data.entity.CompanyEntity">
+		update company set company_status="Inactive" where company_code=#{company_code}
+	</update>
 </mapper>

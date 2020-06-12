@@ -31,4 +31,12 @@ public class ManagecompanyController {
         }
         return new CompanyReturn("failed");
    }
+   @PostMapping("/disable")
+    public CompanyReturn disableCompany(@RequestBody(required = true) CompanyEntity companyEntity){
+        int status = companyMapper.disableCompany(companyEntity);
+        if(status == 1){
+            return new CompanyReturn("ok");
+        }
+       return new CompanyReturn("failed");
+   }
 }
