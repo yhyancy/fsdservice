@@ -10,6 +10,7 @@
         <module>zuulgateway</module>
         <module>companyservice</module>
         <module>stockchartservice</module>
+        <module>importdataservice</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
