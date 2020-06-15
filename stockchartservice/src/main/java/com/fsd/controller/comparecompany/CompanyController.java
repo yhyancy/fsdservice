@@ -1,10 +1,15 @@
 package com.fsd.controller.comparecompany;
 
+import com.fsd.data.entity.commonPriceReturn.PriceEntityReturn;
+import com.fsd.data.entity.mutiCompare.MultiInputEntity;
+import com.fsd.data.entity.mutiCompare.MultiOutputEntity;
 import com.fsd.data.entity.singleCompare.SingleInputEntity;
 import com.fsd.data.entity.singleCompare.SingleOutputEntity;
 import com.fsd.data.mapper.StockchartMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("compare/company")
@@ -25,9 +30,16 @@ public class CompanyController {
                 stockchartMapper.getPrice2(singleInputEntity));
     }
 
-//    @PostMapping("muiti")
-//    public OutputEntity getMultiCompanyPrices(@RequestBody(required = true) InputEntity inputEntity){
-//        inputEntity.setCode(stockchartMapper.getCompanyCode());
-//    }
+    @GetMapping("multi")
+    private MultiOutputEntity compareMutiCompany(@RequestBody(required = true) MultiInputEntity companies) {
+
+        companies.setCode1(stockchartMapper.getCompanyCode(companies.getName1()));
+        companies.setCode2(stockchartMapper.getCompanyCode(companies.getName2()));
+
+        List<PriceEntityReturn> mutiPrice1 = stockchartMapper.getMutiCompanyPrice1(companies);
+        List<PriceEntityReturn> mutiPrice2 = stockchartMapper.getMutiCompanyPrice1(companies);
+
+        return new MultiOutputEntity(companies.getName1(), companies.getName2(), mutiPrice1, mutiPrice2);
+    }
 
 }
