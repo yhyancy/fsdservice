@@ -31,15 +31,15 @@ public class CompanyController {
     }
 
     @GetMapping("multi")
-    private MultiOutputEntity compareMutiCompany(@RequestBody(required = true) MultiInputEntity companies) {
+    private MultiOutputEntity compareMutiCompany(@RequestBody(required = true) MultiInputEntity multiInputEntity) {
 
-        companies.setCode1(stockchartMapper.getCompanyCode(companies.getName1()));
-        companies.setCode2(stockchartMapper.getCompanyCode(companies.getName2()));
+        multiInputEntity.setCode1(stockchartMapper.getCompanyCode(multiInputEntity.getName1()));
+        multiInputEntity.setCode2(stockchartMapper.getCompanyCode(multiInputEntity.getName2()));
 
-        List<PriceEntityReturn> mutiPrice1 = stockchartMapper.getMutiCompanyPrice1(companies);
-        List<PriceEntityReturn> mutiPrice2 = stockchartMapper.getMutiCompanyPrice1(companies);
+        List<PriceEntityReturn> mutiPrice1 = stockchartMapper.getMutiCompanyPrice1(multiInputEntity);
+        List<PriceEntityReturn> mutiPrice2 = stockchartMapper.getMutiCompanyPrice2(multiInputEntity);
 
-        return new MultiOutputEntity(companies.getName1(), companies.getName2(), mutiPrice1, mutiPrice2);
+        return new MultiOutputEntity(multiInputEntity.getName1(), multiInputEntity.getName2(), mutiPrice1, mutiPrice2);
     }
 
 }
