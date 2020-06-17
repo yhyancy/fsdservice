@@ -22,4 +22,14 @@
             <version>2.2.2.RELEASE</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <finalName>eurekaserver-1.1</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
